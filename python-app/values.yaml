@@ -1,0 +1,19 @@
+# Default values for python-app.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+appimage: sidrasaleem/app-python:python
+
+dbimage: sidrasaleem/app-mysql:mysql
+
+ingress:
+  enabled: true
+
+replicaCount: 2
+
+service:
+  port: 80
+  type: NodePort
+
+health:
+  port: 8888

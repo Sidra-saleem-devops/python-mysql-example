@@ -1,0 +1,16 @@
+version: "2"
+services:
+  app:
+    image: sidrasaleem/app-python:python
+    links:
+      - db
+    ports:
+      - "5000:5000"
+  db:
+    image: sidrasaleem/app-mysql:mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d/:ro
